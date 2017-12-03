@@ -1,0 +1,121 @@
+{**
+ * @param string   $basePath web base path
+ * @param array    $flashes  flash messages
+ *}
+<!DOCTYPE html>
+<html>
+<head>
+    {block head}
+	<meta charset="utf-8">
+	<title>Protector | {ifset title}{include title|stripHtml}{/ifset}</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Jakub Feret">       
+        <link rel="stylesheet" href="{$basePath}/css/bootstrap.min.css">
+        <link rel="stylesheet" href="{$basePath}/css/nouislider.min.css" >
+        <link rel="stylesheet" href="{$basePath}/css/style.css">
+	<link rel="stylesheet" href="{$basePath}/css/styly.css">    
+    {/block}  
+</head>
+
+<body>  
+    {if $user->isLoggedIn()}
+    <nav class="navbar"> 
+        <div class="navigace">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <ul class="nav">
+                <li>
+                    <a class="navbar-brand" n:href="Homepage:default">
+                        <img id="home" src="{$basePath}/images/home.png" alt="Home button">
+                    </a>
+                </li>
+            </ul>
+          </div>
+
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                    {if in_array('administrator',$user->getRoles())}
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Administrace<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a n:href="Settings:setting">Nastavení</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a n:href="User:list">Uživatelé</a></li>
+                            </ul>
+                        </li>
+                    {/if}              
+            </ul>
+            <!-- <form class="navbar-form navbar-left" role="search">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Search">
+              </div>
+              <button type="submit" class="btn btn-default">Submit</button>
+            </form>-->
+            <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{$user->getIdentity()->name} <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a n:href="User:update $user->id">Nastavení</a></li>
+                            <li><a n:href="User:changePassword $user->id">Změnit heslo</a></li>
+                            <li><a n:href="Sign:out">Odhlásit</a></li>
+                        </ul>
+                    </li>  
+            </ul>
+
+          </div><!-- /.navbar-collapse -->
+        </div>
+    </nav>
+    {/if}
+    
+    <div n:foreach="$flashes as $flash" n:class="flash, $flash->type">{$flash->message}</div>
+    <div class="container">
+        <div class="row">
+            
+            {include content}
+            
+            <footer class="text-center">
+                <hr>
+                <p>&copy Jakub Feret 2017</p>
+            </footer>
+        </div>
+    </div>
+	{block scripts}
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <script src="{$basePath}/js/bootstrap.min.js"></script>
+	<script src="https://nette.github.io/resources/js/netteForms.min.js"></script>
+	<script src="{$basePath}/js/main.js"></script>
+        <script src="{$basePath}/js/nouislider.min.js"></script>
+        
+        <script>
+            var slider = document.getElementById('slider');
+
+            noUiSlider.create(slider, {
+                start: [20],
+                range: {
+                    'min': 0,
+                    'max': 60
+                }
+            });
+            
+        </script>
+        <!--<script language="javascript">
+            function changeImage() {
+                if (document.getElementById("onOff").src.indexOf({$basePath}+"/images/on.png") >= 0) {
+                    document.getElementById("onOff").src={$basePath}+"/images/off.png";
+                }   
+                else {
+                    document.getElementById("onOff").src={$basePath}+"/images/on.png";
+                }
+            }
+        </script>-->
+	{/block}
+</body>
+</html>

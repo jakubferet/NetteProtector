@@ -1,0 +1,13 @@
+{block title}
+Úvodní stránka
+{/block}
+
+{block content}
+    <a id="onOffButton" n:href="Homepage:activate">
+        {if $data->activate == 'false'}
+            <img class="onOff" class="img-responsive" src="{$basePath}/images/on.png" alt="On button">      
+        {else}
+            <img class="onOff" class="img-responsive" src="{$basePath}/images/off.png" alt="Off button">
+        {/if}
+    </a>
+{/block}

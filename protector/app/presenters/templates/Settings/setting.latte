@@ -1,0 +1,15 @@
+{* Latte template *}
+{block title}
+Nastavení
+{/block}
+{block content}
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form">
+                <h3>Nastavení</h3>
+                {import '../components/settings-form.latte'}
+                {include settings-form settingsForm}               
+            </div>
+        </div>
+    </div>
+{/block}

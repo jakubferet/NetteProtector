@@ -1,0 +1,12 @@
+{* Latte template *}
+{block content}
+    <div class="row">  
+        <div class="col-md-6 col-md-offset-3">
+            <div class="form">
+                <h3 n:block=title>Přihlášení</h3>
+                {import '../components/bootstrap-form.latte'}
+                {include bootstrap-form signInForm}
+            </div>
+        </div>
+    </div>
+{/block}

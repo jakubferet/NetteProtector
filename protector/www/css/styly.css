@@ -1,0 +1,144 @@
+
+body {
+  width: 100%;
+  margin: 0;  
+  font-size: 13pt;
+}
+
+.navigace {
+	background-color: rgb(0, 109, 204); 
+}
+
+.nav li a {
+  font-size: 1.4em;
+  line-height: 1.6em;
+  color: white;
+  font-weight: bold;
+  border: none;
+  position: relative;
+  display: block;
+  transition: all 0.3s ease;
+}
+
+.nav li a:visited {
+    background-color: rgb(0, 109, 204);
+}
+
+.nav li a:hover {
+    background-color: rgb(51, 153, 255);
+}
+
+.nav .open > a, .nav .open > a:focus, .nav .open > a:hover {
+	background-color: rgb(51, 153, 255);   
+}
+
+.dropdown:hover .dropdown-menu {  
+	top: 100%;
+    opacity: 1;
+    visibility: visible;
+}
+
+.dropdown:hover .dropdown-toggle {
+    background-color: rgb(51, 153, 255);
+}
+
+.dropdown-menu {	
+	display: block;
+	background-color: rgb(51, 153, 255); 
+	border: none;
+	width: 100%;
+	opacity: 0;
+	visibility: hidden;	
+	position: absolute;	
+	top: 70%;
+	z-index: 1;
+	transition: all 0.3s ease;
+}
+
+.dropdown-menu li a {
+	padding: 10px 20px;
+}
+
+.dropdown-menu li a:hover {
+	color: white;
+	background-color: rgb(0, 109, 204); 
+}
+
+.icon-bar{
+    background-color: white;
+}
+
+.navbar-toggle:hover {
+    background-color: rgb(51, 153, 255);
+}
+
+.form {
+	background-color: rgb(0, 109, 204); 
+	color: white;
+	padding: 5% 10% 5% 10%;
+	margin: 5%;
+	border-radius: 50px;
+	box-shadow: 0 0 50px black;
+}
+
+h2 {
+	color: rgb(0, 109, 204);
+	text-align: center;
+	font-size: 2.2em;
+  	font-weight: bold;
+}
+
+h3 {
+	text-align: center;
+	font-size: 1.8em;
+  	font-weight: bold;	
+}
+
+.titul {
+	background-color: rgb(26, 140, 255);
+	color: white;
+}
+
+#home {
+	height: 40px;
+}
+
+.navbar-brand {
+	height: 70px;
+}
+
+img {
+	max-width: 100%;
+	height: auto;	
+}
+
+.onOff {
+	display: block;
+	margin: auto;
+}
+
+#onOffButton {
+	display: block;
+	margin: auto;
+	max-width: 50%;
+}
+
+.flash {
+	text-align: center;
+}
+
+footer hr {
+  border-color: rgb(0, 109, 204); 
+}
+
+footer {
+  font-size: 0.9em;
+  color: gray;
+  text-align: center;
+  font-style: italic;
+  padding: 1%;
+  margin: 1%;
+ }
+ 
+ 
+ 

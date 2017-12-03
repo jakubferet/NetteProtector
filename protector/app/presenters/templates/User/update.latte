@@ -1,0 +1,15 @@
+{* Latte template *}
+{block title}
+Úprava uživatele
+{/block}
+{block content}
+    <div class="row">   
+        <div class="col-md-12">
+            <div class="form">
+                <h3>Úprava uživatele</h3>  
+                {import '../components/bootstrap-form.latte'}
+                {include bootstrap-form updateForm}
+            </div>
+        </div>
+    </div>
+{/block}

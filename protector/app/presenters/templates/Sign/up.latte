@@ -1,0 +1,14 @@
+{* Latte template *}
+{block content}
+    <div class="row">
+        <h2 n:block=title>Registrace</h2>
+        <div class="col-md-10">
+            {* control signUpForm *}
+
+            {import '../components/bootstrap-form.latte'}
+            {include bootstrap-form signUpForm}
+
+            <p><a n:href="in">Máte už svůj účet? Přihlaste se.</a></p>
+        </div>
+    </div>
+{/block}

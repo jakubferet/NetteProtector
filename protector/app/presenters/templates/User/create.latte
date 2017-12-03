@@ -1,0 +1,15 @@
+{* Latte template *}
+{block title}
+Nový uživatel
+{/block}
+{block content}
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form">
+                <h3>Nový uživatel</h3>
+                {import '../components/bootstrap-form.latte'}
+                {include bootstrap-form createForm}
+            </div>
+        </div>
+    </div>
+{/block}
