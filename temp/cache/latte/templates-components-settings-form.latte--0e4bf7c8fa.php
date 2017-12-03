@@ -87,6 +87,7 @@ class Template0e4bf7c8fa extends Latte\Runtime\Template
 ?>
                     <div class="col-md-7">
                         <p id="slider"></p>
+                        <input id="input" style="color: black">
                     </div>
 <?php
 				}
@@ -96,33 +97,33 @@ class Template0e4bf7c8fa extends Latte\Runtime\Template
 				if (in_array($input->getOption('type'), ['text', 'select', 'textarea'], TRUE)) {
 					?>				<?php
 					$_input = is_object($input) ? $input : end($this->global->formsStack)[$input];
-					echo $_input->getControl()->addAttributes(['class' => 'form-control']) /* line 24 */ ?>
+					echo $_input->getControl()->addAttributes(['class' => 'form-control']) /* line 25 */ ?>
 
 <?php
 				}
 				elseif ($input->getOption('type') === 'button') {
 					?>				<?php
 					$_input = is_object($input) ? $input : end($this->global->formsStack)[$input];
-					echo $_input->getControl() /* line 26 */ ?>
+					echo $_input->getControl() /* line 27 */ ?>
 
 <?php
 				}
 				elseif ($input->getOption('type') === 'checkbox') {
 					?>				<div class="checkbox"><?php
 					$_input = is_object($input) ? $input : end($this->global->formsStack)[$input];
-					echo $_input->getControl() /* line 28 */ ?></div>
+					echo $_input->getControl() /* line 29 */ ?></div>
 <?php
 				}
 				elseif ($input->getOption('type') === 'radio') {
 					?>				<div class="radio"><?php
 					$_input = is_object($input) ? $input : end($this->global->formsStack)[$input];
-					echo $_input->getControl() /* line 30 */ ?></div>
+					echo $_input->getControl() /* line 31 */ ?></div>
 <?php
 				}
 				else {
 					?>				<?php
 					$_input = is_object($input) ? $input : end($this->global->formsStack)[$input];
-					echo $_input->getControl() /* line 32 */ ?>
+					echo $_input->getControl() /* line 33 */ ?>
 
 <?php
 				}
@@ -132,7 +133,7 @@ class Template0e4bf7c8fa extends Latte\Runtime\Template
 				ob_start(function () {});
 				?>			<span class=has-error><?php
 				ob_start();
-				echo LR\Filters::escapeHtmlText($input->error) /* line 35 */;
+				echo LR\Filters::escapeHtmlText($input->error) /* line 36 */;
 				$this->global->ifcontent = ob_get_flush();
 ?></span>
 <?php

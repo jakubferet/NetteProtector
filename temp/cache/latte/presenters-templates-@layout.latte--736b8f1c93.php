@@ -169,26 +169,39 @@ class Template736b8f1c93 extends Latte\Runtime\Template
 	<script src="https://nette.github.io/resources/js/netteForms.min.js"></script>
 	<script src="<?php echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 94 */ ?>/js/main.js"></script>
         <script src="<?php echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 95 */ ?>/js/nouislider.min.js"></script>
+        <script src="<?php echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 96 */ ?>/js/wNumb.js"></script>
         
         <script>
-            var slider = document.getElementById('slider');
+            var sliderFormat = document.getElementById('slider');
+            var inputFormat = document.getElementById('input');
 
-            noUiSlider.create(slider, {
-                start: [20],
-                range: {
-                    'min': 0,
-                    'max': 60
-                }
+            noUiSlider.create(sliderFormat, {
+                    start: [20],
+                    step: 1,
+                    range: {
+                        'min': [5],
+                        'max': [60]
+                    },
+                    format: wNumb({
+                        decimals: 0
+                    })
             });
             
+            sliderFormat.noUiSlider.on('update', function( values, handle ) {
+                inputFormat.value = values[handle];
+            });
+
+            inputFormat.addEventListener('change', function(){
+                sliderFormat.noUiSlider.set(this.value);
+            });
         </script>
         <!--<script language="javascript">
             function changeImage() {
-                if (document.getElementById("onOff").src.indexOf(<?php echo LR\Filters::escapeHtmlComment($basePath) /* line 111 */ ?>+"/images/on.png") >= 0) {
-                    document.getElementById("onOff").src=<?php echo LR\Filters::escapeHtmlComment($basePath) /* line 112 */ ?>+"/images/off.png";
+                if (document.getElementById("onOff").src.indexOf(<?php echo LR\Filters::escapeHtmlComment($basePath) /* line 124 */ ?>+"/images/on.png") >= 0) {
+                    document.getElementById("onOff").src=<?php echo LR\Filters::escapeHtmlComment($basePath) /* line 125 */ ?>+"/images/off.png";
                 }   
                 else {
-                    document.getElementById("onOff").src=<?php echo LR\Filters::escapeHtmlComment($basePath) /* line 115 */ ?>+"/images/on.png";
+                    document.getElementById("onOff").src=<?php echo LR\Filters::escapeHtmlComment($basePath) /* line 128 */ ?>+"/images/on.png";
                 }
             }
         </script>-->

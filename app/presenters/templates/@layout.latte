@@ -93,18 +93,31 @@
 	<script src="https://nette.github.io/resources/js/netteForms.min.js"></script>
 	<script src="{$basePath}/js/main.js"></script>
         <script src="{$basePath}/js/nouislider.min.js"></script>
+        <script src="{$basePath}/js/wNumb.js"></script>
         
         <script>
-            var slider = document.getElementById('slider');
+            var sliderFormat = document.getElementById('slider');
+            var inputFormat = document.getElementById('input');
 
-            noUiSlider.create(slider, {
-                start: [20],
-                range: {
-                    'min': 0,
-                    'max': 60
-                }
+            noUiSlider.create(sliderFormat, {
+                    start: [20],
+                    step: 1,
+                    range: {
+                        'min': [5],
+                        'max': [60]
+                    },
+                    format: wNumb({
+                        decimals: 0
+                    })
             });
             
+            sliderFormat.noUiSlider.on('update', function( values, handle ) {
+                inputFormat.value = values[handle];
+            });
+
+            inputFormat.addEventListener('change', function(){
+                sliderFormat.noUiSlider.set(this.value);
+            });
         </script>
         <!--<script language="javascript">
             function changeImage() {
