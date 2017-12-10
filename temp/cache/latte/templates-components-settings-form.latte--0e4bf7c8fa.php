@@ -108,22 +108,10 @@ class Template0e4bf7c8fa extends Latte\Runtime\Template
 
 <?php
 				}
-				elseif ($input->getOption('type') === 'checkbox') {
-					?>				<div class="checkbox"><?php
-					$_input = is_object($input) ? $input : end($this->global->formsStack)[$input];
-					echo $_input->getControl() /* line 29 */ ?></div>
-<?php
-				}
-				elseif ($input->getOption('type') === 'radio') {
-					?>				<div class="radio"><?php
-					$_input = is_object($input) ? $input : end($this->global->formsStack)[$input];
-					echo $_input->getControl() /* line 31 */ ?></div>
-<?php
-				}
 				else {
 					?>				<?php
 					$_input = is_object($input) ? $input : end($this->global->formsStack)[$input];
-					echo $_input->getControl() /* line 33 */ ?>
+					echo $_input->getControl() /* line 29 */ ?>
 
 <?php
 				}
@@ -133,7 +121,7 @@ class Template0e4bf7c8fa extends Latte\Runtime\Template
 				ob_start(function () {});
 				?>			<span class=has-error><?php
 				ob_start();
-				echo LR\Filters::escapeHtmlText($input->error) /* line 36 */;
+				echo LR\Filters::escapeHtmlText($input->error) /* line 32 */;
 				$this->global->ifcontent = ob_get_flush();
 ?></span>
 <?php

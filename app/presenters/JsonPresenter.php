@@ -5,6 +5,7 @@ use App\Model;
 use App\Model\SettingsManager;
 use Drahak\Restful\IResource;
 use Drahak\Restful\Application\UI\ResourcePresenter;
+use Drahak\Restful\Security\Process\SecuredAuthentication;
 
 class JsonPresenter extends ResourcePresenter
 {

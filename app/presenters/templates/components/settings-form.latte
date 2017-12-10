@@ -25,10 +25,6 @@
 				{input $input class => form-control}
 			{elseif $input->getOption(type) === button}
 				{input $input}
-			{elseif $input->getOption(type) === checkbox}
-				<div class="checkbox">{input $input}</div>
-			{elseif $input->getOption(type) === radio}
-				<div class="radio">{input $input}</div>
 			{else}
 				{input $input}
 			{/if}

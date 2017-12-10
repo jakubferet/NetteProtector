@@ -14,6 +14,7 @@
             <file>file:/C:/xampp/htdocs/protector/protector/app/config/config.local.neon</file>
             <file>file:/C:/xampp/htdocs/protector/protector/app/forms/SignUpFormFactory.php</file>
             <file>file:/C:/xampp/htdocs/protector/protector/app/presenters/HomepagePresenter.php</file>
+            <file>file:/C:/xampp/htdocs/protector/protector/app/bootstrap.php</file>
             <file>file:/C:/xampp/htdocs/protector/protector/app/presenters/templates/@layout.latte</file>
             <file>file:/C:/xampp/htdocs/protector/protector/app/presenters/UserPresenter.php</file>
             <file>file:/C:/xampp/htdocs/protector/protector/app/model/UserManager.php</file>
