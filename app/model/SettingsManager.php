@@ -18,7 +18,8 @@ class SettingsManager
             COLUMN_ACTIVATE = 'activate',
             COLUMN_PASSWORD = 'password',
             COLUMN_COUNTDOWN = 'countdown',
-            COLUMN_WARNING = 'warning';
+            COLUMN_WARNING = 'warning',
+            COLUMN_ALARM = 'alarm';
 
 
 	/** @var Nette\Database\Context */
@@ -44,6 +45,12 @@ class SettingsManager
         public function activate($value){
             $this->database->table(self::TABLE_NAME)->update([
                 self::COLUMN_ACTIVATE => $value,
+            ]);
+	}
+        
+        public function alarm($value){
+            $this->database->table(self::TABLE_NAME)->update([
+                self::COLUMN_ALARM => $value,
             ]);
 	}
         

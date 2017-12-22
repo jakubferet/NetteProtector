@@ -32,36 +32,45 @@ body {
 	background-color: rgb(51, 153, 255);   
 }
 
-.dropdown:hover .dropdown-menu {  
-	top: 100%;
-    opacity: 1;
-    visibility: visible;
+@media only screen and (min-width: 768px) {
+	.dropdown:hover .dropdown-menu {  
+		top: 100%;
+	    opacity: 1;
+	    visibility: visible;
+	}
+	.dropdown-menu {	
+		display: block;
+		background-color: rgb(51, 153, 255); 
+		border: none;
+		width: 100%;
+		opacity: 0;
+		visibility: hidden;	
+		position: absolute;	
+		top: 70%;
+		z-index: 1;
+		transition: all 0.3s ease;
+	}
+	.dropdown-menu li a {
+		padding: 10px 20px;
+	}
+	.dropdown-menu li a:hover {
+		color: white;
+		background-color: rgb(0, 109, 204); 
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	.dropdown-menu li a {
+		margin: 10px 0px;
+	}
+	.dropdown-menu li a:hover {
+		color: white;
+		background-color: rgb(51, 153, 255);
+	}	
 }
 
 .dropdown:hover .dropdown-toggle {
     background-color: rgb(51, 153, 255);
-}
-
-.dropdown-menu {	
-	display: block;
-	background-color: rgb(51, 153, 255); 
-	border: none;
-	width: 100%;
-	opacity: 0;
-	visibility: hidden;	
-	position: absolute;	
-	top: 70%;
-	z-index: 1;
-	transition: all 0.3s ease;
-}
-
-.dropdown-menu li a {
-	padding: 10px 20px;
-}
-
-.dropdown-menu li a:hover {
-	color: white;
-	background-color: rgb(0, 109, 204); 
 }
 
 .icon-bar{
@@ -139,6 +148,3 @@ footer {
   padding: 1%;
   margin: 1%;
  }
- 
- 
- 

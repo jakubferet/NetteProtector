@@ -3,8 +3,6 @@
 namespace App\Presenters;
 use Nette;
 use App\Model;
-use Nette\Mail\Message;
-use Nette\Mail\SendmailMailer;
 use App\Model\SettingsManager;
 
 
@@ -29,17 +27,9 @@ class HomepagePresenter extends BasePresenter
     
     public function actionActivate($activate){
         $data = $this->settingsManager->getSetting(1);
-        $mail = new Message;
-        $mailer = new SendmailMailer;
         if ($data->activate == 'true'){
             $this->settingsManager->activate('false');
             $this->flashMessage("Alarm byl deaktivován!");           
-            
-            /*$mail->setFrom('Protektor <alarm@protektor.com>')
-                    ->addTo('739187900@sms.t-mobile.cz')
-                    ->setSubject('Narušení bezpečnosti')
-                    ->setBody("Došlo ke spuštění bezpečnostního systému! Možné narušení bezpečnosti!");       
-            $mailer->send($mail);*/
         }    
         else {
             $this->settingsManager->activate('true');

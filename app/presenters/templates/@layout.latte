@@ -53,12 +53,6 @@
                         </li>
                     {/if}              
             </ul>
-            <!-- <form class="navbar-form navbar-left" role="search">
-              <div class="form-group">
-                <input type="text" class="form-control" placeholder="Search">
-              </div>
-              <button type="submit" class="btn btn-default">Submit</button>
-            </form>-->
             <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{$user->getIdentity()->name} <span class="caret"></span></a>
@@ -92,10 +86,10 @@
         <script src="{$basePath}/js/bootstrap.min.js"></script>
 	<script src="https://nette.github.io/resources/js/netteForms.min.js"></script>
 	<script src="{$basePath}/js/main.js"></script>
-        <script src="{$basePath}/js/nouislider.min.js"></script>
-        <script src="{$basePath}/js/wNumb.js"></script>
+        <!--<script src="{$basePath}/js/nouislider.min.js"></script>
+        <script src="{$basePath}/js/wNumb.js"></script>-->
         
-        <script>
+        <!--<script>
             var sliderFormat = document.getElementById('slider');
             var inputFormat = document.getElementById('input');
 
@@ -118,7 +112,7 @@
             inputFormat.addEventListener('change', function(){
                 sliderFormat.noUiSlider.set(this.value);
             });
-        </script>
+        </script>-->
         <!--<script language="javascript">
             function changeImage() {
                 if (document.getElementById("onOff").src.indexOf({$basePath}+"/images/on.png") >= 0) {

@@ -163,6 +163,7 @@ class Container_8bc1e3b7b2 extends Nette\DI\Container
 					'application.5',
 					'application.6',
 					'application.7',
+					'application.8',
 				],
 			],
 			'Nette\Application\UI\Control' => [
@@ -173,6 +174,7 @@ class Container_8bc1e3b7b2 extends Nette\DI\Container
 					'application.5',
 					'application.6',
 					'application.7',
+					'application.8',
 				],
 			],
 			'Nette\Application\UI\Component' => [
@@ -183,6 +185,7 @@ class Container_8bc1e3b7b2 extends Nette\DI\Container
 					'application.5',
 					'application.6',
 					'application.7',
+					'application.8',
 				],
 			],
 			'Nette\ComponentModel\Container' => [
@@ -193,6 +196,7 @@ class Container_8bc1e3b7b2 extends Nette\DI\Container
 					'application.5',
 					'application.6',
 					'application.7',
+					'application.8',
 				],
 			],
 			'Nette\ComponentModel\Component' => [
@@ -203,6 +207,7 @@ class Container_8bc1e3b7b2 extends Nette\DI\Container
 					'application.5',
 					'application.6',
 					'application.7',
+					'application.8',
 				],
 			],
 			'Nette\Application\UI\IRenderable' => [
@@ -213,6 +218,7 @@ class Container_8bc1e3b7b2 extends Nette\DI\Container
 					'application.5',
 					'application.6',
 					'application.7',
+					'application.8',
 				],
 			],
 			'Nette\ComponentModel\IContainer' => [
@@ -223,6 +229,7 @@ class Container_8bc1e3b7b2 extends Nette\DI\Container
 					'application.5',
 					'application.6',
 					'application.7',
+					'application.8',
 				],
 			],
 			'Nette\ComponentModel\IComponent' => [
@@ -233,6 +240,7 @@ class Container_8bc1e3b7b2 extends Nette\DI\Container
 					'application.5',
 					'application.6',
 					'application.7',
+					'application.8',
 				],
 			],
 			'Nette\Application\UI\ISignalReceiver' => [
@@ -243,6 +251,7 @@ class Container_8bc1e3b7b2 extends Nette\DI\Container
 					'application.5',
 					'application.6',
 					'application.7',
+					'application.8',
 				],
 			],
 			'Nette\Application\UI\IStatePersistent' => [
@@ -253,6 +262,7 @@ class Container_8bc1e3b7b2 extends Nette\DI\Container
 					'application.5',
 					'application.6',
 					'application.7',
+					'application.8',
 				],
 			],
 			'ArrayAccess' => [
@@ -263,6 +273,7 @@ class Container_8bc1e3b7b2 extends Nette\DI\Container
 					'application.5',
 					'application.6',
 					'application.7',
+					'application.8',
 				],
 			],
 			'Nette\Application\IPresenter' => [
@@ -276,19 +287,21 @@ class Container_8bc1e3b7b2 extends Nette\DI\Container
 					'application.7',
 					'application.8',
 					'application.9',
+					'application.10',
 				],
 			],
 			'App\Presenters\Error4xxPresenter' => [1 => ['application.1']],
 			'App\Presenters\ErrorPresenter' => [1 => ['application.2']],
 			'App\Presenters\HomepagePresenter' => [1 => ['application.3']],
-			'Drahak\Restful\Application\UI\ResourcePresenter' => [1 => ['application.4']],
-			'Drahak\Restful\Application\IResourcePresenter' => [1 => ['application.4']],
+			'Drahak\Restful\Application\UI\ResourcePresenter' => [1 => ['application.4', 'application.8']],
+			'Drahak\Restful\Application\IResourcePresenter' => [1 => ['application.4', 'application.8']],
 			'App\Presenters\JsonPresenter' => [1 => ['application.4']],
 			'App\Presenters\SettingsPresenter' => [1 => ['application.5']],
 			'App\Presenters\SignPresenter' => [1 => ['application.6']],
 			'App\Presenters\UserPresenter' => [1 => ['application.7']],
-			'NetteModule\ErrorPresenter' => [1 => ['application.8']],
-			'NetteModule\MicroPresenter' => [1 => ['application.9']],
+			'App\Presenters\ValuesPresenter' => [1 => ['application.8']],
+			'NetteModule\ErrorPresenter' => [1 => ['application.9']],
+			'NetteModule\MicroPresenter' => [1 => ['application.10']],
 			'Nette\DI\Container' => [1 => ['container']],
 		],
 		'services' => [
@@ -299,14 +312,15 @@ class Container_8bc1e3b7b2 extends Nette\DI\Container
 			'63_App_Model_SettingsManager' => 'App\Model\SettingsManager',
 			'64_App_Model_UserManager' => 'App\Model\UserManager',
 			'application.1' => 'App\Presenters\Error4xxPresenter',
+			'application.10' => 'NetteModule\MicroPresenter',
 			'application.2' => 'App\Presenters\ErrorPresenter',
 			'application.3' => 'App\Presenters\HomepagePresenter',
 			'application.4' => 'App\Presenters\JsonPresenter',
 			'application.5' => 'App\Presenters\SettingsPresenter',
 			'application.6' => 'App\Presenters\SignPresenter',
 			'application.7' => 'App\Presenters\UserPresenter',
-			'application.8' => 'NetteModule\ErrorPresenter',
-			'application.9' => 'NetteModule\MicroPresenter',
+			'application.8' => 'App\Presenters\ValuesPresenter',
+			'application.9' => 'NetteModule\ErrorPresenter',
 			'application.application' => 'Nette\Application\Application',
 			'application.linkGenerator' => 'Nette\Application\LinkGenerator',
 			'application.presenterFactory' => 'Nette\Application\IPresenterFactory',
@@ -370,6 +384,7 @@ class Container_8bc1e3b7b2 extends Nette\DI\Container
 		'tags' => [
 			'inject' => [
 				'application.1' => TRUE,
+				'application.10' => TRUE,
 				'application.2' => TRUE,
 				'application.3' => TRUE,
 				'application.4' => TRUE,
@@ -381,14 +396,15 @@ class Container_8bc1e3b7b2 extends Nette\DI\Container
 			],
 			'nette.presenter' => [
 				'application.1' => 'App\Presenters\Error4xxPresenter',
+				'application.10' => 'NetteModule\MicroPresenter',
 				'application.2' => 'App\Presenters\ErrorPresenter',
 				'application.3' => 'App\Presenters\HomepagePresenter',
 				'application.4' => 'App\Presenters\JsonPresenter',
 				'application.5' => 'App\Presenters\SettingsPresenter',
 				'application.6' => 'App\Presenters\SignPresenter',
 				'application.7' => 'App\Presenters\UserPresenter',
-				'application.8' => 'NetteModule\ErrorPresenter',
-				'application.9' => 'NetteModule\MicroPresenter',
+				'application.8' => 'App\Presenters\ValuesPresenter',
+				'application.9' => 'NetteModule\ErrorPresenter',
 			],
 			'restful.converter' => [
 				'restful.dateTimeConverter' => TRUE,
@@ -510,6 +526,17 @@ class Container_8bc1e3b7b2 extends Nette\DI\Container
 
 
 	/**
+	 * @return NetteModule\MicroPresenter
+	 */
+	public function createServiceApplication__10()
+	{
+		$service = new NetteModule\MicroPresenter($this, $this->getService('http.request'),
+			$this->getService('routing.router'));
+		return $service;
+	}
+
+
+	/**
 	 * @return App\Presenters\ErrorPresenter
 	 */
 	public function createServiceApplication__2()
@@ -600,22 +627,29 @@ class Container_8bc1e3b7b2 extends Nette\DI\Container
 
 
 	/**
-	 * @return NetteModule\ErrorPresenter
+	 * @return App\Presenters\ValuesPresenter
 	 */
 	public function createServiceApplication__8()
 	{
-		$service = new NetteModule\ErrorPresenter($this->getService('tracy.logger'));
+		$service = new App\Presenters\ValuesPresenter($this->getService('63_App_Model_SettingsManager'));
+		$service->injectPrimary($this, $this->getService('application.presenterFactory'),
+			$this->getService('routing.router'), $this->getService('http.request'),
+			$this->getService('http.response'), $this->getService('session.session'),
+			$this->getService('security.user'), $this->getService('latte.templateFactory'));
+		$service->injectDrahakRestful($this->getService('restful.responseFactory'),
+			$this->getService('restful.resourceFactory'), $this->getService('restful.security.authentication'),
+			$this->getService('restful.inputFactory'), $this->getService('restful.requestFilter'));
+		$service->invalidLinkMode = 5;
 		return $service;
 	}
 
 
 	/**
-	 * @return NetteModule\MicroPresenter
+	 * @return NetteModule\ErrorPresenter
 	 */
 	public function createServiceApplication__9()
 	{
-		$service = new NetteModule\MicroPresenter($this, $this->getService('http.request'),
-			$this->getService('routing.router'));
+		$service = new NetteModule\ErrorPresenter($this->getService('tracy.logger'));
 		return $service;
 	}
 

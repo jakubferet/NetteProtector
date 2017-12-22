@@ -24,6 +24,5 @@ class JsonPresenter extends ResourcePresenter
         $this->resource->settings = $this->settingsManager->getSetting(1);
         $this->sendResource($this->typeMap[$type]);
     }
-
 }
 
