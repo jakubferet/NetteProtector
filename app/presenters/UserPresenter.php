@@ -28,13 +28,6 @@ class UserPresenter extends UI\Presenter {
             $this->redirect("Sign:in");
         }
     } 
-    
-    /*protected function startup() {
-        parent::startup();
-        if (!$this->getUser()->isAllowed('User', 'list')) {
-            throw new ForbiddenRequestException();
-        }
-    }*/
 
     public function renderList(){
         if (!$this->getUser()->isAllowed('User', 'list'))

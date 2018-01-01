@@ -4,32 +4,32 @@
 {/define}
 
 {define bootstrap-form $form}
-	<form n:name=$form class=form-horizontal>
-	<ul class=error n:if="$form->ownErrors">
-		<li n:foreach="$form->ownErrors as $error">{$error}</li>
-	</ul>
+    <form n:name=$form class=form-horizontal>
+        <ul class=error n:if="$form->ownErrors">
+            <li n:foreach="$form->ownErrors as $error">{$error}</li>
+        </ul>
 
-	<div n:foreach="$form->controls as $name => $input"
-		n:if="!$input->getOption(rendered) && $input->getOption(type) !== hidden"
-		n:class="form-group, $input->required ? required, $input->error ? has-error">
+        <div n:foreach="$form->controls as $name => $input"
+            n:if="!$input->getOption(rendered) && $input->getOption(type) !== hidden"
+            n:class="form-group, $input->required ? required, $input->error ? has-error">
 
-		<div class="col-md-3 control-label">{label $input}</div>
+            <div class="col-md-3 control-label">{label $input}</div>
 
-		<div class="col-md-9">
-			{if $input->getOption(type) in [text, select, textarea]}
-				{input $input class => form-control}
-			{elseif $input->getOption(type) === button}
-				{input $input}
-			{elseif $input->getOption(type) === checkbox}
-				<div class="checkbox">{input $input}</div>
-			{elseif $input->getOption(type) === radio}
-				<div class="radio">{input $input}</div>
-			{else}
-				{input $input}
-			{/if}
+            <div class="col-md-9">
+                {if $input->getOption(type) in [text, select, textarea]}
+                    {input $input class => form-control}
+                {elseif $input->getOption(type) === button}
+                    {input $input}
+                {elseif $input->getOption(type) === checkbox}
+                    <div class="checkbox">{input $input}</div>
+                {elseif $input->getOption(type) === radio}
+                    <div class="radio">{input $input}</div>
+                {else}
+                    {input $input}
+                {/if}
 
-			<span class=has-error n:ifcontent>{$input->error}</span>
-		</div>
-	</div>
-	</form>
+                <span class=has-error n:ifcontent>{$input->error}</span>
+            </div>
+        </div>
+    </form>
 {/define}

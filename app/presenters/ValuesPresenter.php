@@ -22,7 +22,7 @@ class ValuesPresenter extends ResourcePresenter
     public function actionValues(){
         $mail = new Message;
         $mailer = new SendmailMailer;
-	    $json = $this->getHttpRequest()->getRawBody();
+	$json = $this->getHttpRequest()->getRawBody();
         $value = json_decode($json);
         $active = $value->{'activate'};
         $alarmed = $value->{'alarm'};

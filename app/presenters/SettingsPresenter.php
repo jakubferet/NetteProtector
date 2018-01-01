@@ -49,8 +49,7 @@ class SettingsPresenter extends UI\Presenter
         $this->settingsManager->update($values);
         $this->flashMessage("Údaje byly aktualizovány."); 
         $this->redirect('Settings:setting');
-    }
-           
+    }         
 }
 
     
